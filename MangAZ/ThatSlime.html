@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>MangA-Z</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./Manga.css" />
+    <link rel="stylesheet" href="CSS/footerstyle.css" />
+    <link rel="icon" type="image/x-icon" href="../Images/TopLogo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://kit.fontawesome.com/dab88e7bda.js"></script>
+    <script
+      src="https://kit.fontawesome.com/843c900ca9.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <!-- Top Nav Bar-->
+
+  <body>
+    <button id="scroll-up-btn"><i class="fas fa-chevron-up"></i></button>
+    <button id="scroll-down-btn"><i class="fas fa-chevron-down"></i></button>
+    <nav>
+      <ul>
+        <li class="logo"><img src="../Images/Weblogo.png" /></li>
+        <li class="btn"><span class="fas fa-bars"></span></li>
+
+        <div class="items">
+          <li><a href="../main.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contactus.html">Contact Us</a></li>
+          <li><i class="fa fa-envelope" aria-hidden="true"></i></li>
+        </div>
+
+        <li class="search-icon">
+          <input type="search" placeholder="Search" />
+          <label class="icon">
+            <span class="fas fa-search"></span>
+          </label>
+        </li>
+      </ul>
+    </nav>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <!-- Manga's -->
+
+    <h3 id="products">Read Manga's A-Z</h3>
+    <p>You are reading That Time I Got Reincarnated as a Slime Chapter 1</p>
+    <br>
+    <br>
+    <div id="manga-container">
+      <img src="../Images/ThatSlime/1.jpg">
+      <img src="../Images/ThatSlime/2.jpg">
+      <img src="../Images/ThatSlime/3.jpg">
+      <img src="../Images/ThatSlime/4.jpg">
+      <img src="../Images/ThatSlime/5.jpg">
+      <!-- Add pages if necessary -->
+    </div>
+    
+    
+
+
+
+  </body>
+
+  <script>
+    const scrollUpBtn = document.querySelector('#scroll-up-btn');
+    const scrollDownBtn = document.querySelector('#scroll-down-btn');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 500) {
+        scrollUpBtn.style.display = 'block';
+        scrollDownBtn.style.display = 'none';
+      } else {
+        scrollUpBtn.style.display = 'none';
+        scrollDownBtn.style.display = 'block';
+      }
+    });
+    
+    scrollUpBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    
+    scrollDownBtn.addEventListener('click', () => {
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    });
+    </script>
+
+</html>
+
