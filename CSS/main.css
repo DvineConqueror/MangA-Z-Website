@@ -211,12 +211,27 @@ body::-webkit-scrollbar-thumb:hover {
 
 h3{
   text-align: center;
-  font-size: 30px;
+  font-size: 40px;
   color: #0f0e0e;
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
 }
 
+#manga-result {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 30px;
+  max-width: 1000px; /* add max-width to limit width of container */
+  margin-left: auto; /* move container to center of page */
+  margin-right: auto; /* move container to center of page */
+}
+
+#manga-result .card {
+  max-width: 200px; /* set max width for each card */
+}
 
 
 .card-container {
@@ -234,6 +249,7 @@ h3{
   box-shadow: 0 2px 4px rgba(24, 23, 23, 0.2);
   overflow: hidden;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .card img {
@@ -242,45 +258,31 @@ h3{
   object-fit: cover;
 }
 
-.card-body {
+.card p {
+  margin-top: 10px;
+  font-weight: 900;
   padding: 10px;
-  display: flex;
-  justify-content: space-between;
 }
 
-.card-body h3 {
-  margin: 0;
-  font-size: 1.3rem;
-  font-weight: bold;
-}
-
-.card-body p {
-  margin: 1px;
-  font-size: 0.9rem;
-  color: rgb(255, 255, 255);
-  font-weight: bold;
-}
-
-
-
-
-/*Buttons*/
-
-.btn {
-  background-color: #0597bb; 
-  color: rgb(243, 243, 243);
-  padding: 10px 10px;
+.read-button {
   text-decoration: none;
-  font-size: 16px;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  max-width: 80%;
+  color: rgb(0, 0, 0);
 }
 
-.btn:hover {
-  background-color:#10d6ab; 
-  color: black;
+.read-button button {
+  font-weight: lighter;
+  font-size: 0.9em;
+  background-color: #00bfff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.read-button button:hover {
+  background-color: #5700c9;
 }
 
 /*Footer*/
