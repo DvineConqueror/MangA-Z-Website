@@ -30,8 +30,8 @@
 </div>
 
   <li class="search-icon">
-    <input type="search" placeholder="Search">
-      <label class="icon">
+    <input type="search" placeholder="Search Manga's" id="search-input">
+    <label class="icon">
         <span class="fas fa-search"></span>
           
           
@@ -40,18 +40,17 @@
 </li>
 </ul>
 </nav>
-
 <br>
 <br>
 <br>
 <br>
 <br>
 <br>
-
+<div id="manga-result"></div>
             <!-- Manga's -->
 <!--First Row-->
   <h3 id="products">Read Manga's A-Z</h3><br><br>
-  <div class="card-container">
+  <div class="card-container" id="search-results">
     <div class="card">
       <img src="./Images/Manga Covers/Aharen-Cover.jpg" alt="Aharen Manga Cover" />
       <div class="card-body">
@@ -226,5 +225,126 @@
 <br>
 <br>
 
+<script>
+const searchInput = document.getElementById('search-input');
+const mangaResult = document.getElementById('manga-result');
+
+// add manga data here
+const mangaData = [
+  {
+    title: 'Aharen is Indecipherable',
+    coverImg: './Images/Manga Covers/Aharen-Cover.jpg',
+    url: './MangAZ/AharenManga.html',
+    keywords: ['aharen', 'indecipherable', 'school', 'life', 'comedy', 'romance'],
+  },
+  {
+    title: 'Boruto: Naruto Next Generations',
+    coverImg: './Images/Manga Covers/Boruto-Cover.jpg',
+    url: './MangAZ/Boruto.html',
+    keywords: ['boruto', 'naruto', 'next', 'generations', 'action', 'adventure', 'shounen'],
+  },
+  {
+    title: 'Chainsaw Man',
+    coverImg: './Images/Manga Covers/Chainsawman-Cover.jpg',
+    url: './MangAZ/ChainsawManga.html',
+    keywords: ['chainsaw', 'man', 'horror', 'action'],
+  },
+  {
+    title: 'Demon Slayer',
+    coverImg: './Images/Manga Covers/DemonSlayer-Cover.jpg',
+    url: './MangAZ/DemonSlayer.html',
+    keywords: ['demon', 'fantasy', 'Action', 'slay'],
+  },
+  {
+    title: 'Edens Zero',
+    coverImg: './Images/Manga Covers/EdensZero-Cover.jpg',
+    url: './MangAZ/EdensZero.html',
+    keywords: ['eden', 'zero', 'sci-fi', 'adventure', 'action'],
+  },
+  {
+    title: 'Food Wars: Shokugeki no Soma',
+    coverImg: './Images/Manga Covers/FoodWarsCover.jpg',
+    url: './MangAZ/FoodWars.html',
+    keywords: ['food', 'wars', 'shokugeki', 'soma', 'cooking', 'comedy', 'drama', 'ecchi', 'slice'],
+  },
+  {
+    title: 'Jujutsu Kaisen',
+    coverImg: './Images/Manga Covers/JujutsuCover.jpg',
+    url: './MangAZ/JujutsuKaisen.html',
+    keywords: ['jujutsu', 'kaisen', 'supernatural', 'curses'],
+  },
+  {
+    title: 'Zephyr Impact War',
+    coverImg: './Images/Manga Covers/Zephyr.jpg',
+    url: './MangAZ/ZephyrManga.html',
+    keywords: ['zephyr', 'impact', 'war', 'action', 'sci-fi'],
+  },
+  {
+    title: 'Record of Ragnarok',
+    coverImg: './Images/Manga Covers/RagnarokCover.jpg',
+    url: './MangAZ/Ragnarok.html',
+    keywords: ['record', 'ragnarok', 'action', 'gods', 'gods vs humans'],
+  },
+  {
+    title: 'That Time I Got Reincarnated as a Slime',
+    coverImg: './Images/Manga Covers/SlimeCover.jpg',
+    url: './MangAZ/ThatSlime.html',
+    keywords: ['slime', 'reincarnated', 'fantasy', 'ecchi', 'reincarnation'],
+  },
+  {
+    title: 'Vinland Saga',
+    coverImg: './Images/Manga Covers/VinlandCover.jpg',
+    url: './MangAZ/VinlandSaga.html',
+    keywords: ['vinland', 'saga', 'historical fiction'],
+  },
+  {
+    title: 'Your Name',
+    coverImg: './Images/Manga Covers/YourNameCover.jpg',
+    url: './MangAZ/YourName.html',
+    keywords: ['your', 'name', 'romance', 'different worlds'],
+  },
+  // add more manga data here if necessary
+];
+
+// filters manga data based on search keyword
+function filterMangaData(keyword) {
+  return mangaData.filter((manga) => {
+    return manga.keywords.some((kw) => kw.toLowerCase().includes(keyword.toLowerCase()));
+  });
+}
+
+// renders manga data on the page
+function renderMangaData(data) {
+  const html = data.map((manga) => {
+    return `
+      <div class="card">
+        <img src="${manga.coverImg}" alt="${manga.title}" />
+        <div class="card-body">
+          <a class='read-button'>
+            <button class="btn btn-outline-primary mx-4 my-2" onclick="window.location.href='${manga.url}'"><b>Read Chapter</b></button>
+          </a>
+          <p>${manga.title}</p>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  mangaResult.innerHTML = html;
+}
+
+// event listener for search input
+searchInput.addEventListener('input', (event) => {
+  const keyword = event.target.value.trim();
+
+  if (keyword.length === 0) {
+    mangaResult.innerHTML = '';
+    return;
+  }
+
+  const filteredData = filterMangaData(keyword);
+
+  renderMangaData(filteredData);
+});
+</script>
 
 </html>
