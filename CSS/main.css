@@ -131,6 +131,8 @@ nav ul li.btn span{
 nav ul li.btn span.show:before{
   content: '\f00d';
 }
+
+
 @media screen and (max-width: 1052px) {
   nav{
     padding: 10px 40px 10px 0px;
@@ -209,10 +211,18 @@ body::-webkit-scrollbar-thumb:hover {
   background-color: #555;
 }
 
+hr {
+  height: 5px; /* Set the height of the line */
+  background: -webkit-linear-gradient(90deg, hsla(197, 100%, 63%, 1) 0%, hsla(294, 100%, 55%, 1) 100%);
+  border: gray; /* Remove the border */
+  margin: 10px 0; /* Set the margin above and below the line */
+}
+
+
 h3{
   text-align: center;
   font-size: 40px;
-  color: #0f0e0e;
+  color: #4c00fd;
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
 }
@@ -249,7 +259,14 @@ h3{
   box-shadow: 0 2px 4px rgba(24, 23, 23, 0.2);
   overflow: hidden;
   margin-bottom: 20px;
+  margin-left: 10px;
+  flex: 1;
+  transition: 0.3s all ease;
   text-align: center;
+}
+
+.card:hover {
+  flex: 2;
 }
 
 .card img {
@@ -284,6 +301,23 @@ h3{
 .read-button button:hover {
   background-color: #5700c9;
 }
+
+@media screen and (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+    gap: 10px;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .card {
+    width: 95%;
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+}
+
 
 /*Footer*/
 * {
@@ -400,16 +434,4 @@ p2{
 }
 
 
-/*Responsiveness*/
-@media screen and (max-width: 768px) {
-  .card {
-    width: calc(100% - 40px);
-  }
-}
 
-@media screen and (max-width: 576px) {
-  .card {
-    width: 100%;
-    max-width: 100%;
-  }
-}
