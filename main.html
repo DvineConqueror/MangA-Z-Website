@@ -9,36 +9,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://kit.fontawesome.com/dab88e7bda.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/regular.min.css"></script>
     <script src="https://kit.fontawesome.com/843c900ca9.js" crossorigin="anonymous"></script>
+
   </head>
 
   <!-- Top Nav Bar-->
 
   <body>
-    <nav>
-      <ul>
-        <li class="logo"><img src="./Images/Weblogo.png"></li>
-          <li class="btn"><span class="fas fa-bars"></span></li>
+    <div id="loader">
+      <div class="spinner">
+        <div class="spinnerin"></div>
+      </div>
+    </div>
+    
+    <div id="content" style="display:none;">
+      <!-- Your main content here -->
+    </div>
+    
+    <div class="loader-wrapper">
+      <div class="loader"></div>
+    </div>
+    
+    <nav class="navbar">
+        <a href="#" class="logo"><img src="./Images/Weblogo.png"></a>
+          <input type="checkbox" id="toggler">
+          <label for="toggler"><i class="fas fa-bars"></i></i></label>
 
-  <div class="items">
-    <li><a class="active" href="main.html" >Home</a>
-      <li><a href="about.html">About</a></li>
+  <div class="menu">
+    <ul class="list">
+        <li><a class="active" href="main.html" >Home</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="contactus.html">Contact Us</a></li>
-        <li><i class="fa fa-envelope" aria-hidden="true"></i></li>
-          
-
-</div>
-
-  <li class="search-icon">
-    <input type="search" placeholder="Search Manga's" id="search-input">
-    <label class="icon">
-        <span class="fas fa-search"></span>
-          
-          
-
-</label>
-</li>
-</ul>
+        <li class="search-icon">
+          <input type="search" placeholder="Search">
+              <span class="fas fa-search"></span>
+              </li>
+      </ul>
+  </div>
 </nav>
 <br>
 <br>
@@ -46,21 +54,24 @@
 <br>
 <br>
 <br>
-<h3 id="products">Read Manga's A-Z</h3>
+<div class="typewriter_effect"></div>
+<h3 id="products">Read Popular Manga's A-Z</h3>
+</div>
 <br>
-<br><hr>
 <br>
+<br>
+<hr>
 <div id="manga-result"></div>
             <!-- Manga's -->
 <!--First Row-->
-  
+
   <div class="card-container" id="search-results">
     <div class="card">
       <img src="./Images/Manga Covers/Aharen-Cover.jpg" alt="Aharen Manga Cover" />
       <div class="card-body">
         <a class='read-button'> 
-          <button class="btn btn-outline-primary mx-4 my-2" onclick="window.location.href='./MangAZ/AharenManga.html'"> <b>Read
-            Chapter</b></button></a>
+          <button class="btn btn-outline-primary mx-4 my-2" onclick="window.location.href='./MangAZ/AharenManga.html'"> <b>Read Chapter</b></button>
+        </a>
         <p>Aharen is Indecipherable</p>
       </div>
     </div>
@@ -188,14 +199,14 @@
               <div class="main-item">
                 <h2 class="title">About</h2>
                   <ul>
-                    <li><a href="#">About Us</a></li>
+                    <li><a href="about.html">About Us</a></li>
                 </ul>
               </div>
       
               <div class="main-item">
                 <h2 class="title">Contact</h2>
                   <ul>
-                    <li><a href="#">Help</a></li>
+                    <li><a href="contactus.html">Help</a></li>
                 </ul>
               </div>
       
@@ -204,7 +215,7 @@
               
                <form>
                   <input type="email" name="email" placeholder="Enter email address">
-                  <input type="submit" value="Subscribe">
+                  <input type="submit" value="Submit">
                 </form>
               </div>
             </section>
@@ -226,8 +237,6 @@
               </ul>
             </section>
           </footer>
-<br>
-<br>
 
 <script>
 const searchInput = document.getElementById('search-input');
