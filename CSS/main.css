@@ -137,7 +137,7 @@ nav .search-icon .icon span {
   margin: auto;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   nav .search-icon {
     justify-content: center;
     margin-bottom: 10px;
@@ -145,7 +145,7 @@ nav .search-icon .icon span {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .menu {
     width: 100%;
     max-height: 0;
