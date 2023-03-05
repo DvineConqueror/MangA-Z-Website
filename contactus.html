@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>MangA-Z</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="CSS/contact.css">
+    <link rel="icon" type="image/x-icon" href="./Images/TopLogo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://kit.fontawesome.com/dab88e7bda.js"></script>
+    <script src="https://kit.fontawesome.com/843c900ca9.js" crossorigin="anonymous"></script>
+  </head>
+
+  <!-- Top Nav Bar-->
+
+  <body>
+    <nav class="navbar">
+      <a href="../main.html" class="logo"><img src="../Images/Weblogo.png"></a>
+      <input type="checkbox" id="toggler">
+      <label for="toggler"><i class="fas fa-bars"></i></i></label>
+      <div class="menu">
+        <ul class="list">
+          <li><a href="../main.html" >Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a class="active"  href="../contactus.html">Contact Us</a></li>
+          <li class="search-icon">
+            <input type="search" placeholder="Search" id="search-input">
+            <span class="fas fa-search"></span>
+          </li>
+        </ul>
+      </div>
+    </nav>
+<br>
+<br>
+<br>
+<br>
+<br>
+<!--Contact Us Input-->
+<div class="container">
+  <h1>Contact Us</h1>
+  <p>Hi! Please contact us using this page. Or Email Us at <a href="mailto: hdominic2016@gmail.com">here</a> for more information.</p>
+  <form action="message-confirmation.html" onsubmit="event.preventDefault(); this.submit();">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required>
+  
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+  
+    <label for="message">Message</label>
+    <textarea id="message" name="message" required></textarea>
+  
+    <input type="submit" value="Submit">
+  </form>
+</div>
+</div>
+
+
+
+</body>
+
+  <!-- Footer -->
+  <div class="container"></div>
+<footer>
+  
+  <section class="main">
+    <div class="main-item">
+      <h2 class="title">About</h2>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+      </ul>
+    </div>
+
+    <div class="main-item">
+      <h2 class="title">Contact</h2>
+        <ul>
+          <li><a href="contactus.html">Help</a></li>
+      </ul>
+    </div>
+
+    <div class="main-item">
+      <h2 class="title">Need Help?</h2>
+    
+     <form>
+        <input type="email" name="email" placeholder="Enter email address">
+        <input type="submit" value="Contact">
+      </form>
+    </div>
+  </section>
+ 
+  
+  <section class="social">
+    <ul class="social-list">
+      <li><a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="https://twitter.com/?lang=en"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
+    </ul>
+  </section>
+ 
+  <section class="legal">
+    <ul class="legal-list">
+      <li><a href="#">Terms &amp; Conditions</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+          <li>&copy; 2019 Copyright Alicoben Inc.</li>
+    </ul>
+  </section>
+</footer>
+  
+  
+</html>
