@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>MangA-Z</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./Manga.css" />
+    <link rel="stylesheet" href="CSS/footerstyle.css" />
+    <link rel="icon" type="image/x-icon" href="../Images/TopLogo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://kit.fontawesome.com/dab88e7bda.js"></script>
+    <script
+      src="https://kit.fontawesome.com/843c900ca9.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <!-- Top Nav Bar-->
+
+  <body>
+    <button id="scroll-up-btn"><i class="fas fa-chevron-up"></i></button>
+    <button id="scroll-down-btn"><i class="fas fa-chevron-down"></i></button>
+    <nav class="navbar">
+      <a href="../main.html" class="logo"><img src="../Images/Weblogo.png"></a>
+        <input type="checkbox" id="toggler">
+        <label for="toggler"><i class="fas fa-bars"></i></i></label>
+
+<div class="menu">
+  <ul class="list">
+      <li><a href="../main.html" >Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../contactus.html">Contact Us</a></li>
+      <li class="search-icon">
+        <input type="search" placeholder="Search" id="search-input">
+            <span class="fas fa-search"></span>
+            </li>
+    </ul>
+</div>
+</nav>
+
+
+    <br />
+    <br />
+    <br />
+
+    <!-- Manga's -->
+
+    <h3 id="products">Read Manga's A-Z</h3>
+    <p>Boruto Chapter 1</p>
+    <br>
+
+    <div class="manga-nav">
+      <a href="#" class="prev-btn"><span class="prev-icon">&laquo;</span> Prev</a>
+      <div class="select-container">
+        <label for="chapter-select"></label>
+        <select id="chapter-select">
+          <option value="./BorutoManga.html" selected>Chapter 01</option>
+        </select>
+      </div>
+      <a href="#" class="next-btn">Next <span class="next-icon">&raquo;</span></a>
+    </div>
+    <div id="manga-container">
+      <img src="../Images/Boruto/1.jpg">
+      <img src="../Images/Boruto/2.jpg">
+      <img src="../Images/Boruto/3.jpg">
+      <img src="../Images/Boruto/4.jpg">
+      <img src="../Images/Boruto/5.jpg">
+      <!-- Add as many pages as you want -->
+    </div>
+    
+    
+
+
+
+  </body>
+
+  <script>
+    const scrollUpBtn = document.querySelector('#scroll-up-btn');
+    const scrollDownBtn = document.querySelector('#scroll-down-btn');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 500) {
+        scrollUpBtn.style.display = 'block';
+        scrollDownBtn.style.display = 'none';
+      } else {
+        scrollUpBtn.style.display = 'none';
+        scrollDownBtn.style.display = 'block';
+      }
+    });
+    
+    scrollUpBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    
+    scrollDownBtn.addEventListener('click', () => {
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    });
+    </script>
+    <script>
+      //This is for the chapter select 
+      // Get the select element
+      const select = document.getElementById('chapter-select');
+    
+      // Listen for changes to the selected option
+      select.addEventListener('change', (event) => {
+        // Redirect to the value of the selected option
+        window.location.href = event.target.value;
+      });
+    </script>
+    <script>
+      const navbar = document.querySelector('.navbar');
+    let prevScrollPos = window.pageYOffset;
+    
+    window.onscroll = function() {
+      let currentScrollPos = window.pageYOffset;
+      if (prevScrollPos > currentScrollPos) {
+        navbar.classList.remove('scrolled');
+      } else {
+        navbar.classList.add('scrolled');
+      }
+      prevScrollPos = currentScrollPos;
+    }
+    
+      </script>
+</html>
+
